@@ -1,0 +1,28 @@
+{
+  "name": "notification-api",
+  "version": "1.0.0",
+  "description": "Notification Service for getting and publish notification",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.mjs"
+  },
+  "keywords": [
+    "API",
+    "endpoint",
+    "postgres",
+    "message",
+    "queue"
+  ],
+  "author": "Abdelrahman Abdelsalam",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^2.28.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12",
+    "prisma": "^2.28.0"
+  }
+}
