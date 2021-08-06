@@ -1,3 +1,6 @@
+import { saveNotification } from "./queries.mjs";
+
 export const pushNotification = async (req, res) => {
-  res.send("waiting for implementation");
+  const users = await saveNotification(req.body);
+  res.send("saved");
 };
