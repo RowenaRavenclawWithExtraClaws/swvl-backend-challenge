@@ -1,11 +1,13 @@
 import express from "express";
 import cors from "cors";
+import { pushNotification } from "./handlers.mjs";
+import { PORT } from "./helpers.mjs";
 
 const app = express();
 
 app.use(cors());
-app.use(express.json())
+app.use(express.json());
 
-app.post("/notification", (req, res) => {});
+app.post("/notification", pushNotification);
 
-app.listen(3000, () => console.log("listening on port 3000"));
+app.listen(PORT, () => console.log(`listening on port ${PORT}`));
