@@ -1,3 +1,4 @@
+import { publish } from "./publisher.mjs";
 import { getUsers } from "./queries.mjs";
 import { getSingleNotification } from "./queries.mjs";
 
@@ -6,5 +7,7 @@ export const getAndPublishNotification = async (req, res) => {
 
   const users = await getUsers(notification.subscribers);
 
-  res.send(users);
+  const result = publish(notification, users);
+
+  res.send(result);
 };
