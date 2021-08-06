@@ -1,0 +1,21 @@
+{
+  "name": "notification-api",
+  "version": "1.0.0",
+  "description": "Notification API for storing and sending messages for pushing notifications",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "API",
+    "endpoint",
+    "postgres",
+    "message",
+    "queue"
+  ],
+  "author": "Abdelrahman Abdelsalam",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
