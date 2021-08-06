@@ -9,12 +9,12 @@ datasource db {
 
 model notifications {
   id           Int       @id @default(autoincrement())
-  type         enumtype
   title        String    @db.VarChar(40)
   body         String
   subscribers  Decimal[] @db.Decimal
-  date_created DateTime  @db.Date
-  date_read    DateTime? @db.Date
+  types        String[]
+  date_created String
+  date_read    String?
 }
 
 model users {
@@ -22,10 +22,4 @@ model users {
   userdata     String  @unique
   active_app   Boolean
   active_email Boolean
-}
-
-enum enumtype {
-  sms
-  email
-  app
 }
