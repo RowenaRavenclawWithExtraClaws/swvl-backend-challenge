@@ -22,7 +22,9 @@ const initQueueAndSendMsg = (msg) =>
 
       channel.sendToQueue(queue, Buffer.from(msg.toString()));
 
-      console.log("Notification sent through the message queue\n");
+      console.log(
+        "Notification sent to the notification service through the message queue\n"
+      );
     });
 
     setTimeout(() => {
