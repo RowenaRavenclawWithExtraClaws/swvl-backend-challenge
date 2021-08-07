@@ -2,12 +2,14 @@ import { publish } from "./publisher.mjs";
 import { getUsers } from "./queries.mjs";
 import { getSingleNotification } from "./queries.mjs";
 
-export const getAndPublishNotification = async (req, res) => {
-  const notification = await getSingleNotification(parseInt(req.query.id));
+const getAndPublishNotification = async (notificationId) => {
+  const notification = await getSingleNotification(parseInt(notificationId));
 
   const users = await getUsers(notification.subscribers);
 
-  const result = publish(notification, users);
+  const results = publish(notification, users);
 
-  res.send(result);
+  console.log("Notifications:", results);
 };
+
+export default getAndPublishNotification;
