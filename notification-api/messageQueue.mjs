@@ -1,7 +1,8 @@
 import amqp from "amqplib/callback_api.js";
+import { mqURL } from "../notification-service/helpers.mjs";
 
 const initQueueAndSendMsg = (msg) =>
-  amqp.connect("amqp://localhost", (error0, connection) => {
+  amqp.connect(mqURL, (error0, connection) => {
     if (error0) {
       console.log(error0);
     }
