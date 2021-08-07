@@ -18,8 +18,7 @@ model notifications {
 }
 
 model users {
-  id           Int     @id @default(autoincrement())
-  userdata     String  @unique
-  active_app   Boolean
-  active_email Boolean
+  id            Int    @id @default(autoincrement())
+  userdata      String @unique
+  prefered_lang String @db.VarChar(3)
 }
