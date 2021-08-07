@@ -1,15 +1,30 @@
 const typePubDict = {
   sms: (notification, user) => {
     /* handle real sms sender service like twilio */
-    return { title: notification.title, method: "sms", userId: user.id };
+    return {
+      title: notification.title,
+      body: notification.body,
+      publish_method: "sms",
+      userId: user.id,
+    };
   },
   email: (notification, user) => {
     /* handle real email sending service like nodemailer */
-    return { title: notification.title, method: "email", userId: user.id };
+    return {
+      title: notification.title,
+      body: notification.body,
+      publish_method: "email",
+      userId: user.id,
+    };
   },
   app: (notification, user) => {
     /* handle app push notification service like firebase cloud messeging */
-    return { title: notification.title, method: "app", userId: user.id };
+    return {
+      title: notification.title,
+      body: notification.body,
+      publish_method: "app",
+      userId: user.id,
+    };
   },
 };
 
