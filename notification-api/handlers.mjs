@@ -1,6 +1,12 @@
+import initQueueAndSendMsg from "./messageQueue.mjs";
 import { saveNotification } from "./queries.mjs";
 
-export const pushNotification = async (req, res) => {
-  const users = await saveNotification(req.body);
-  res.send("saved");
+const saveAndSendNotification = async (req, res) => {
+  const notification = await saveNotification(req.body);
+
+  initQueueAndSendMsg(notification.id);
+
+  res.send("Notification is on the way");
 };
+
+export default saveAndSendNotification;
