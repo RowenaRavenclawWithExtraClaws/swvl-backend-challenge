@@ -19,14 +19,14 @@ const initQueueAndReveiveMsg = () =>
         durable: false,
       });
 
-      console.log(`"Waiting for notification ID messages in ${queue}`);
+      console.log(`Waiting for notification ID messages in ${queue}\n`);
 
       channel.consume(
         queue,
         (msg) => {
           const notificationId = msg.content.toString();
 
-          console.log(`Received ${notificationId}`);
+          console.log(`Received notification ID: ${notificationId}\n`);
 
           getAndPublishNotification(notificationId);
         },

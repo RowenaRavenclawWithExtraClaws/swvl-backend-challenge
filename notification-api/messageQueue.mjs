@@ -7,6 +7,8 @@ const initQueueAndSendMsg = (msg) =>
       console.log(error0);
     }
 
+    console.log("message queue connection established\n");
+
     connection.createChannel((error1, channel) => {
       if (error1) {
         console.log(error1);
@@ -20,7 +22,7 @@ const initQueueAndSendMsg = (msg) =>
 
       channel.sendToQueue(queue, Buffer.from(msg.toString()));
 
-      console.log("Notification sent through the message queue");
+      console.log("Notification sent through the message queue\n");
     });
 
     setTimeout(() => {
