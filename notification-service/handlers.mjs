@@ -9,7 +9,7 @@ const getAndPublishNotification = async (notificationId) => {
 
   const results = publish(notification, users);
 
-  console.log("Notifications:", results);
+  console.log("Publish details:", results);
 };
 
 export default getAndPublishNotification;
